@@ -1,3 +1,3 @@
 Sample project for OpenClassroom's fundamentals of Java
 
-version: v0.2
+version: v0.3
