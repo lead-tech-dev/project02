@@ -27,7 +27,7 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
 	 * 
 	 */
 	@Override
-	public void SetSymptoms(List<String> symptoms) {
+	public void setSymptoms(List<String> symptoms) {
 
 		if (filepath != null) {
 			try {
