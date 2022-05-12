@@ -12,6 +12,10 @@ import java.util.List;
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
+	/**
+	 * field that must contain the path file list of symptoms
+	 * 
+	 */
 	private String filepath;
 
 	/**
@@ -23,6 +27,11 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		this.filepath = filepath;
 	}
 
+	/**
+	 * 
+	 * {@inheritDoc}
+	 * 
+	 */
 	@Override
 	public List<String> getSymptoms() {
 		ArrayList<String> result = new ArrayList<String>();

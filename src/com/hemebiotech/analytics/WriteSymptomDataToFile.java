@@ -11,6 +11,10 @@ import java.util.List;
  */
 public class WriteSymptomDataToFile implements ISymptomWriter {
 
+	/**
+	 * field that must contain the path of output result
+	 * 
+	 */
 	private String filepath;
 
 	/**
