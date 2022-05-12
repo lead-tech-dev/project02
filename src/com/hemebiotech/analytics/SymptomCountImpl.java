@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class SymptomCounterImpl implements ISymptomCounter {
+public class SymptomCountImpl implements ISymptomCount {
 
     @Override
     public List<String> countSortSymptomList(List<String> symptoms) {

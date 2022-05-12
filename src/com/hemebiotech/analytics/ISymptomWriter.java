@@ -18,6 +18,6 @@ public interface ISymptomWriter {
 	 * 
 	 * @return void
 	 */
-	void SetSymptoms(List<String> symptoms);
+	void setSymptoms(List<String> symptoms);
 
 }
