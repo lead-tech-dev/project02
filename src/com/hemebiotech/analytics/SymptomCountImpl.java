@@ -5,8 +5,17 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Anything that will update symptom source data
+ * 
+ */
 public class SymptomCountImpl implements ISymptomCount {
 
+    /**
+     * 
+     * {@inheritDoc}
+     * 
+     */
     @Override
     public List<String> countSortSymptomList(List<String> symptoms) {
 
