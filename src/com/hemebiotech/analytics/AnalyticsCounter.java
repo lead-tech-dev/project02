@@ -1,6 +1,7 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * The Class AnalyticsCounter. handles the business logic of the symptom
@@ -29,10 +30,10 @@ public class AnalyticsCounter {
 	private ISymptomWriter iSymptomWriter;
 
 	public AnalyticsCounter(ReadSymptomDataFromFile readSymptomDataFromFile,
-			WriteSymptomDataToFile writeSymptomDataToFile, SymptomCountImpl symptomCountImpl) {
+			WriteSymptomDataToFile writeSymptomDataToFile) {
 		this.iSymptomReader = readSymptomDataFromFile;
 		this.iSymptomWriter = writeSymptomDataToFile;
-		this.iSymptomCounter = symptomCountImpl;
+		this.iSymptomCounter = new SymptomCountImpl();
 	}
 
 	/**
@@ -51,7 +52,7 @@ public class AnalyticsCounter {
 	 * @param symptoms the symptoms list
 	 * @return the count symptom list
 	 */
-	public List<String> getCountSortListSymptom(List<String> symptomList) {
+	public Map<String, Long> getCountSortListSymptom(List<String> symptomList) {
 		return iSymptomCounter.countSortSymptomList(symptomList);
 	}
 
@@ -60,7 +61,7 @@ public class AnalyticsCounter {
 	 *
 	 * @param symptomList the symptoms list
 	 */
-	public void setListSymptom(List<String> symptomList) {
+	public void setListSymptom(Map<String, Long> symptomList) {
 		iSymptomWriter.setSymptoms(symptomList);
 	}
 
