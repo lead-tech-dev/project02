@@ -1,6 +1,7 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * The Analytics Main class get a list of symptoms from symp ms.txt and then,
@@ -16,13 +17,17 @@ public class AnalyticsMain {
      */
     public static void main(String[] args) {
         AnalyticsCounter analyticsCounter = new AnalyticsCounter(new ReadSymptomDataFromFile("symptoms.txt"),
-                new WriteSymptomDataToFile("result.out"), new SymptomCountImpl());
+                new WriteSymptomDataToFile("result.out"));
 
         List<String> symptomList = analyticsCounter.getListSymptom();
 
-        List<String> symptomCountSortList = analyticsCounter.getCountSortListSymptom(symptomList);
+        if (symptomList.size() != 0) {
+            Map<String, Long> symptomCountSortList = analyticsCounter.getCountSortListSymptom(symptomList);
 
-        analyticsCounter.setListSymptom(symptomCountSortList);
+            analyticsCounter.setListSymptom(symptomCountSortList);
+        } else {
+            throw new FileEmptyException("Le fichier de syptoms est vide !");
+        }
 
     }
 }

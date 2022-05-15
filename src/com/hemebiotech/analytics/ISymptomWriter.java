@@ -8,6 +8,7 @@ package com.hemebiotech.analytics;
  * 
  */
 import java.util.List;
+import java.util.Map;
 
 public interface ISymptomWriter {
 
@@ -18,6 +19,6 @@ public interface ISymptomWriter {
 	 * 
 	 * @return void
 	 */
-	void setSymptoms(List<String> symptoms);
+	void setSymptoms(Map<String, Long> symptoms);
 
 }

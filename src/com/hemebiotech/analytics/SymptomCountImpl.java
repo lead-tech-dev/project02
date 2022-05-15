@@ -1,7 +1,9 @@
 package com.hemebiotech.analytics;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -17,18 +19,16 @@ public class SymptomCountImpl implements ISymptomCount {
      * 
      */
     @Override
-    public List<String> countSortSymptomList(List<String> symptoms) {
+    public Map<String, Long> countSortSymptomList(List<String> symptoms) {
+        TreeMap<String, Long> treeMap = new TreeMap<>(Comparator.naturalOrder());
 
         Map<String, Long> count = symptoms.stream()
                 .collect(
                         Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
-        List<String> sort = count.entrySet().stream()
-                .sorted(Map.Entry.<String, Long>comparingByKey())
-                .map(e -> e.getKey() + "=" + e.getValue())
-                .collect(Collectors.toList());
+        treeMap.putAll(count);
 
-        return sort;
+        return treeMap;
     }
 
 }
