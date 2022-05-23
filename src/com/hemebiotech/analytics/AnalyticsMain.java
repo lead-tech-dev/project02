@@ -17,7 +17,7 @@ public class AnalyticsMain {
      */
     public static void main(String[] args) {
         AnalyticsCounter analyticsCounter = new AnalyticsCounter(new ReadSymptomDataFromFile("symptoms.txt"),
-                new WriteSymptomDataToFile("result.out"));
+                new WriteSymptomDataToFile("result.out"), new SymptomCountImpl());
 
         List<String> symptomList = analyticsCounter.getListSymptom();
 

@@ -30,10 +30,10 @@ public class AnalyticsCounter {
 	private ISymptomWriter iSymptomWriter;
 
 	public AnalyticsCounter(ReadSymptomDataFromFile readSymptomDataFromFile,
-			WriteSymptomDataToFile writeSymptomDataToFile) {
+			WriteSymptomDataToFile writeSymptomDataToFile, SymptomCountImpl symptomCountImpl) {
 		this.iSymptomReader = readSymptomDataFromFile;
 		this.iSymptomWriter = writeSymptomDataToFile;
-		this.iSymptomCounter = new SymptomCountImpl();
+		this.iSymptomCounter = symptomCountImpl;
 	}
 
 	/**
