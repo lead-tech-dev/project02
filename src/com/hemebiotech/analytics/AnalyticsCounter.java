@@ -30,10 +30,10 @@ public class AnalyticsCounter {
 	private ISymptomWriter iSymptomWriter;
 
 	public AnalyticsCounter(ReadSymptomDataFromFile readSymptomDataFromFile,
-			WriteSymptomDataToFile writeSymptomDataToFile) {
+			WriteSymptomDataToFile writeSymptomDataToFile, SymptomCountImpl symptomCountImpl) {
 		this.iSymptomReader = readSymptomDataFromFile;
 		this.iSymptomWriter = writeSymptomDataToFile;
-		this.iSymptomCounter = new SymptomCountImpl();
+		this.iSymptomCounter = symptomCountImpl;
 	}
 
 	/**
@@ -49,7 +49,7 @@ public class AnalyticsCounter {
 	 * getCountSortListSymptom. method that get the list containing the number of
 	 * each symptom sorted
 	 *
-	 * @param symptoms the symptoms list
+	 * @param symptomList the symptoms list
 	 * @return the count symptom list
 	 */
 	public Map<String, Long> getCountSortListSymptom(List<String> symptomList) {
