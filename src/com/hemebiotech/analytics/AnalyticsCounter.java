@@ -49,7 +49,7 @@ public class AnalyticsCounter {
 	 * getCountSortListSymptom. method that get the list containing the number of
 	 * each symptom sorted
 	 *
-	 * @param symptoms the symptoms list
+	 * @param symptomList the symptoms list
 	 * @return the count symptom list
 	 */
 	public Map<String, Long> getCountSortListSymptom(List<String> symptomList) {
